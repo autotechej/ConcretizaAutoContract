@@ -7,7 +7,7 @@ import Layouts as lyt
 
 def Formulario5():
     global FormularioWindow5, event8, values8, Prazo1, Prazo2, Prazo3, Prazo4, Prazo5
-    FormularioWindow5 = sg.Window('Autotech AutoContract', lyt.FormularioLayout5)
+    FormularioWindow5 = sg.Window('Concretiza AutoContract', lyt.FormularioLayout5)
     event8, values8 = FormularioWindow5.read()
     Prazo1 = values8[0]
     Prazo2 = values8[1]
@@ -22,7 +22,7 @@ def Formulario5():
 #Essa função é declarada primeiro, pois ela será solicitada por outra função pra gerar um fluxo no programa, no entanto ela seria a última a ser executada
 def Formulario4():
     global FormularioWindow4, event7, values7, NumeroControle, Data, NomeRepresentante, CPFRepresentante, Testemunha1, CPFTestemunha1, Testemunha2, CPFTestemunha2, DescricaoSistema
-    FormularioWindow4 = sg.Window('Autotech AutoContract', lyt.FormularioLayout4)
+    FormularioWindow4 = sg.Window('Concretiza AutoContract', lyt.FormularioLayout4)
     event7, values7 = FormularioWindow4.read()
     NumeroControle = values7[0]
     Data = values7[1]
@@ -36,6 +36,7 @@ def Formulario4():
     #Essa função condicional faz o fluxo dos botões no programa
     if event7 == 'Continuar':
         Formulario5()
+        FormularioWindow4.close()
     elif event7 == 'Sair' or event7 == sg.WIN_CLOSED:
         FormularioWindow4.close()
 
@@ -61,7 +62,7 @@ def Formulario3():
 #Essa função capta e armazena os dados da EJ
 def Formulario2():
     global FormularioWindow2, event5, values5, NomeEJ, CNPJEJ, CEPEJ, PresidenteEJ, CPFPresidenteEJ, RGPresidenteEJ, EnderecoPresidenteEJ, EMAILEJ
-    FormularioWindow2 = sg.Window("Autotech AutoContract", lyt.FormularioLayout2)
+    FormularioWindow2 = sg.Window("Concretiza AutoContract", lyt.FormularioLayout2)
     event5, values5 = FormularioWindow2.read()
     NomeEJ = values5[0]
     CNPJEJ = values5[1]
@@ -82,7 +83,7 @@ def Formulario():
     #Declara as variáveis de forma global para serem usadas em outras funções e locais
     global FormularioWindow, event4, values4, NomeCliente, NomeEmpresa, CNPJCliente, EnderecoCliente, CEPcliente, CidadeEstadoCliente, PresidenteCliente, CPFPresidenteCliente, RGPresidenteCliente, EMAILCliente
     #A função Window cria a janela com o layout especificado
-    FormularioWindow = sg.Window("Autotech AutoContract", lyt.FormularioLayout1)
+    FormularioWindow = sg.Window("Concretiza AutoContract", lyt.FormularioLayout1)
     #event armazena as informações passadas pelos botões em strings
     #values armazena as informações passadas pelas caixas de texto em strings de um dicionário
     #A função read lê os dados da janela(Botões e caixas de texto)
@@ -107,7 +108,7 @@ def Formulario():
 #A função que executa a janela do Menu de Contratos
 def MenuPreencherContratos():
     global ContratosWindow, event2, values2, TipoContrato
-    ContratosWindow = sg.Window("Autotech AutoContract", lyt.MenuContratosLayout, size=(350,200), element_justification='c')
+    ContratosWindow = sg.Window("Concretiza AutoContract", lyt.MenuContratosLayout, size=(350,200), element_justification='c')
     event2, values2 = ContratosWindow.read()
     #Caso clique em continuar o programa verifica qual o contrato desejado
     if event2 == 'Contrato de Power BI':
@@ -125,13 +126,13 @@ def MenuPreencherContratos():
 #A função que executa a janela de preferências do usuário
 def MenuPreferencias():
     global PreferenciasWindow, event3, values3
-    PreferenciasWindow = sg.Window("Autotech AutoContract", lyt.PreferenciasLayout)
+    PreferenciasWindow = sg.Window("Concretiza AutoContract", lyt.PreferenciasLayout)
     event3, values3 = PreferenciasWindow.read()
 
 #A função que executa a janela do Menu Principal, dentro dela são executadas as outras
 def MenuPrincipal():
     global MenuWindow, event1, values1
-    MenuWindow = sg.Window("Autotech AutoContract", lyt.MenuPrincipalLayout, size=(500,300), element_justification='c')
+    MenuWindow = sg.Window("Concretiza AutoContract", lyt.MenuPrincipalLayout, size=(500,300), element_justification='c')
     event1, values1 = MenuWindow.read()
     #Caso clique Preencher Novo Contrato ele abre o menu de contratos
     if event1 == 'Preencher Novo Contrato':

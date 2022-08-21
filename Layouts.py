@@ -4,12 +4,12 @@
 import PySimpleGUI as sg
 #Aqui são definidos os parâmetros do tema da interface, nesse caso foram utilizadas as cores da EJ
 
-sg.LOOK_AND_FEEL_TABLE['MyCreatedTheme'] = {'BACKGROUND': 'Black', 
-                                        'TEXT': '#02A69D', 
-                                        'INPUT': '#02A69D', 
-                                        'TEXT_INPUT': '#4E2559', 
+sg.LOOK_AND_FEEL_TABLE['MyCreatedTheme'] = {'BACKGROUND': '#3C3C3B', 
+                                        'TEXT': '#87ceeb', 
+                                        'INPUT': '#87ceeb', 
+                                        'TEXT_INPUT': '#3C3C3B', 
                                         'SCROLL': '#EB7F00', 
-                                        'BUTTON': ('Black', '#02A69D'), 
+                                        'BUTTON': ('#3C3C3B', '#87ceeb'), 
                                         'PROGRESS': ('# D1826B', '# CC8019'), 
                                         'BORDER': 1, 'SLIDER_DEPTH': 0,
                                         'PROGRESS_DEPTH': 0, }
@@ -27,7 +27,7 @@ sg.theme('MyCreatedTheme')
 
 #Layout do menu principal
 MenuPrincipalLayout = [
-    [sg.Text('Autotech', font = FontTitle)],
+    [sg.Text('Concretiza', font = FontTitle)],
     [sg.Text('Menu Principal', font = FontSubtitle)],
     [sg.Button('Preencher Novo Contrato', font=font)],
     [sg.Button('Preferências',  font=font)],
