@@ -35,8 +35,8 @@ def Formulario4():
     DescricaoSistema = values7[8]
     #Essa função condicional faz o fluxo dos botões no programa
     if event7 == 'Continuar':
-        Formulario5()
         FormularioWindow4.close()
+        Formulario5()
     elif event7 == 'Sair' or event7 == sg.WIN_CLOSED:
         FormularioWindow4.close()
 
