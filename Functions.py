@@ -132,7 +132,7 @@ def MenuPreferencias():
 #A função que executa a janela do Menu Principal, dentro dela são executadas as outras
 def MenuPrincipal():
     global MenuWindow, event1, values1
-    MenuWindow = sg.Window("Concretiza AutoContract", lyt.MenuPrincipalLayout, size=(500,300), element_justification='c')
+    MenuWindow = sg.Window("Concretiza AutoContract", lyt.MenuPrincipalLayout, size=(400,350), element_justification='c')
     event1, values1 = MenuWindow.read()
     #Caso clique Preencher Novo Contrato ele abre o menu de contratos
     if event1 == 'Preencher Novo Contrato':
