@@ -48,10 +48,10 @@ FormularioLayout1 = [
     [sg.Text('Indique o Nome da Empresa Cliente:'), sg.InputText(), sg.Text('Indique o CNPJ do Cliente:'), sg.InputText(),],
     [sg.Text('Indique o Endereço do Cliente:'), sg.InputText(), sg.Text('Indique o EMAIL do Cliente:'), sg.InputText()],
     [sg.Text('Indique o CEP do Cliente:'), sg.InputText(), sg.Text('Indique a Cidade e o Estado do Cliente:'), sg.InputText()],
-    [sg.Text('Indique o Nome do Representante do Cliente:'), sg.InputText(), sg.Text('Indique o CPF do Presidente Cliente:'), sg.InputText()],
+    [sg.Text('Indique o Nome do Representante do Cliente:'), sg.InputText(), sg.Text('Indique o CPF do Representante Cliente:'), sg.InputText()],
     [sg.Text('Indique o RG do Presidente Cliente:'), sg.InputText(), sg.Text('Indique o órgão expedidor: '), sg.InputText()],
     [sg.Text('Indique o Cargo do Representante: '), sg.InputText(), sg.Text('Indique o Estado Civil do Cliente: '), sg.InputText()],
-    [sg.Text('Indique o CPF do Cliente: '), sg.InputText(), sg.Text('Indique o telefone de contato do Cliente: '), sg.InputText()], 
+    [sg.Text('Indique o telefone de contato do Cliente: '), sg.InputText()], 
     [sg.Button('Continuar'), sg.Button('Sair')]
     ]
 
@@ -74,31 +74,6 @@ FormularioLayout3 =[
     [sg.Text('Descrição do Serviço: '), sg.InputText('Descreva como deve estar no contrato')],
     [sg.Text('Descrição passo-a-passo do Serviço: '), sg.InputText]
     [sg.Text('Vigência do Contrato: '), sg.InputText()],
+    [sg.Text('Dia de Fechamento do Contrato: '), sg.InputText("XX de XXXX de XXXX")],
     [sg.Button('Finalizar'), sg.Button('Sair')]
 ]
-
-
-FormularioLayout4 = [
-    [sg.Text('Dados Finais', font=font3)],
-    [sg.Text('Faça uma descrição do sistema: '), sg.InputText()],
-    [sg.Text('Indique o Número de Controle: '), sg.InputText()], 
-    [sg.Text('Data no formato xx/xx/xxxx:'), sg.InputText('xx/xx/xxxx')],
-    [sg.Text('Indique o Nome do Representante da Empresa Cliente:'), sg.InputText()], 
-    [sg.Text('Indique o CPF do Representante:'), sg.InputText()],
-    [sg.Text('Indique o Nome da Testemunha 1'), sg.InputText()], 
-    [sg.Text('Indique o CPF da Testemunha 1:'), sg.InputText()],
-    [sg.Text('Indique o Nome da Testemunha 2'), sg.InputText()], 
-    [sg.Text('Indique o CPF da Testemunha 2:'), sg.InputText()],
-    [sg.Text('Faça uma descrição do sistema: '), sg.InputText()],
-    [sg.Button('Continuar'), sg.Button('Sair')]
-]
-
-FormularioLayout5 = [
-    [sg.Text('Dos Prazos', font=font3)],
-    [sg.Text('Prazo para Elaboração inicial e planejamento do projeto: '), sg.InputText()],
-    [sg.Text('Prazo para a compra e obtenção dos materiais necessários para o projeto: '), sg.InputText()],
-    [sg.Text('Prazo para desenvolvimento prático do projeto: '), sg.InputText()],
-    [sg.Text('Prazo para compra e obtenção dos materiais necessários para o projeto: '), sg.InputText()],
-    [sg.Text('Prazo para instalação do projeto no local solicitado pelo contratante: '), sg.InputText()],
-    [sg.Button('Finalizar'), sg.Button('Sair')]
-    ]

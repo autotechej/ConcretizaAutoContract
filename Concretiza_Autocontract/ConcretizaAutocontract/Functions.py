@@ -5,73 +5,36 @@ import PySimpleGUI as sg
 import Layouts as lyt
 
 
-def Formulario5():
-    global FormularioWindow5, event8, values8, Prazo1, Prazo2, Prazo3, Prazo4, Prazo5
-    FormularioWindow5 = sg.Window('Concretiza AutoContract', lyt.FormularioLayout5)
-    event8, values8 = FormularioWindow5.read()
-    Prazo1 = values8[0]
-    Prazo2 = values8[1]
-    Prazo3 = values8[2]
-    Prazo4 = values8[3]
-    Prazo5 = values8[4]
-    if event7 == 'Finalizar':
-        FormularioWindow4.close()
-    elif event7 == 'Sair' or event7 == sg.WIN_CLOSED:
-        FormularioWindow4.close()
-
-#Essa função é declarada primeiro, pois ela será solicitada por outra função pra gerar um fluxo no programa, no entanto ela seria a última a ser executada
-def Formulario4():
-    global FormularioWindow4, event7, values7, NumeroControle, Data, NomeRepresentante, CPFRepresentante, Testemunha1, CPFTestemunha1, Testemunha2, CPFTestemunha2, DescricaoSistema
-    FormularioWindow4 = sg.Window('Concretiza AutoContract', lyt.FormularioLayout4)
-    event7, values7 = FormularioWindow4.read()
-    NumeroControle = values7[0]
-    Data = values7[1]
-    NomeRepresentante = values7[2]
-    CPFRepresentante = values7[3]
-    Testemunha1 = values7[4]
-    CPFTestemunha1 = values7[5]
-    Testemunha2 = values7[6]
-    CPFTestemunha2 = values7[7]
-    DescricaoSistema = values7[8]
-    #Essa função condicional faz o fluxo dos botões no programa
-    if event7 == 'Continuar':
-        FormularioWindow4.close()
-        Formulario5()
-    elif event7 == 'Sair' or event7 == sg.WIN_CLOSED:
-        FormularioWindow4.close()
 
 #Essa função capta e armazena os dados de pagamento
 def Formulario3():
-    global FormularioWindow3, event6, values6, ValorFinal, DescricaoPagamento, Titular, CNPJPagamento, Banco, Agencia, Conta
+    global FormularioWindow3, event6, values6, Prazo1, Prazo2, DescricaoSistema, DescricaoPassoAPasso, Vigencia, DataFechamento
     FormularioWindow3 = sg.Window("Autotech AutoContract", lyt.FormularioLayout3)
     event6, values6 = FormularioWindow3.read()
-    ValorFinal = values6[0]
-    DescricaoPagamento = values6[1]
-    Titular = values6[2]
-    CNPJPagamento = values6[3]
-    Banco = values6[4]
-    Agencia = values6[5]
-    Conta = values6[6]
-    if event6 == 'Continuar':
+    Prazo1 = values6[0]
+    Prazo2 = values6[1]
+    DescricaoSistema = values6[2]
+    DescricaoPassoAPasso = values6[3]
+    Vigencia = values6[4]
+    DataFechamento = values6[5]
+    if event6 == 'Finalizar':
         FormularioWindow3.close()
-        Formulario4()
     elif event6 == 'Sair' or event6 == sg.WIN_CLOSED:
         FormularioWindow3.close()
 
 
 #Essa função capta e armazena os dados da EJ
 def Formulario2():
-    global FormularioWindow2, event5, values5, NomeEJ, CNPJEJ, CEPEJ, PresidenteEJ, CPFPresidenteEJ, RGPresidenteEJ, EnderecoPresidenteEJ, EMAILEJ
+    global FormularioWindow2, event5, values5, ValorFinal, DescricaoPagamento, Titular, CNPJPagamento, Banco, Agencia, Conta
     FormularioWindow2 = sg.Window("Concretiza AutoContract", lyt.FormularioLayout2)
     event5, values5 = FormularioWindow2.read()
-    NomeEJ = values5[0]
-    CNPJEJ = values5[1]
-    CEPEJ = values5[2]
-    PresidenteEJ = values5[3]
-    CPFPresidenteEJ = values5[4]
-    RGPresidenteEJ = values5[5]
-    EnderecoPresidenteEJ = values5[6]
-    EMAILEJ = values5[7]
+    ValorFinal = values5[0]
+    DescricaoPagamento = values5[1]
+    Titular = values5[2]
+    CNPJPagamento = values5[3]
+    Banco = values5[4]
+    Agencia = values5[5]
+    Conta = values5[6]
     if event5 == 'Continuar':
         FormularioWindow2.close()
         Formulario3()
@@ -81,23 +44,27 @@ def Formulario2():
 #Essa função capta e armazena os dados do cliente
 def Formulario():
     #Declara as variáveis de forma global para serem usadas em outras funções e locais
-    global FormularioWindow, event4, values4, NomeCliente, NomeEmpresa, CNPJCliente, EnderecoCliente, CEPcliente, CidadeEstadoCliente, PresidenteCliente, CPFPresidenteCliente, RGPresidenteCliente, EMAILCliente
+    global FormularioWindow, event4, values4, NomeCliente, TelefoneRepresentante, EstadoCivilRepresentante, CargoRepresentante, NomeEmpresa, CNPJCliente, OrgaoExpedidor, RGRepresentante, EnderecoCliente,CPFRepresentante, CEPcliente, CidadeEstadoCliente, NomeRepresentante, EMAILCliente
     #A função Window cria a janela com o layout especificado
     FormularioWindow = sg.Window("Concretiza AutoContract", lyt.FormularioLayout1)
     #event armazena as informações passadas pelos botões em strings
     #values armazena as informações passadas pelas caixas de texto em strings de um dicionário
     #A função read lê os dados da janela(Botões e caixas de texto)
     event4, values4 = FormularioWindow.read()
-    NomeCliente=values4[0]
-    NomeEmpresa=values4[1]
-    CNPJCliente=values4[2]
-    EnderecoCliente=values4[3]
+    NomeEmpresa=values4[0]
+    CNPJCliente=values4[1]
+    EnderecoCliente=values4[2]
+    EMAILCliente=values4[3]
     CEPcliente=values4[4]
     CidadeEstadoCliente=values4[5]
-    PresidenteCliente=values4[6]
-    CPFPresidenteCliente=values4[7]
-    RGPresidenteCliente=values4[8]
-    EMAILCliente=values4[9]
+    NomeRepresentante=values4[6]
+    CPFRepresentante=values4[7]
+    RGRepresentante=values4[8]
+    OrgaoExpedidor=values4[9]
+    CargoRepresentante=values4[10]
+    EstadoCivilRepresentante=values4[11]
+    TelefoneRepresentante=values4[12]
+
     if event4 == 'Continuar':
         FormularioWindow.close()
         Formulario2()
