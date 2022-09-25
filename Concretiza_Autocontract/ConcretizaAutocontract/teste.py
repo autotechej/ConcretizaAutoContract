@@ -1,6 +1,8 @@
 #-*- coding: utf-8 -*-
 #encoding: utf-8
+from datetime import datetime
 import Functions as fct
+#html não mais usado
 beta = 'Isso e um beta'
 h1 = '{size: 54px; text-align: center;\n\tfont-family: Georgia, \'Times New Roman\', Times, serif;}'
 h2 = '{size: 40px; text-align: center;\n\tfont-family: Georgia, \'Times New Roman\', Times, serif;}'

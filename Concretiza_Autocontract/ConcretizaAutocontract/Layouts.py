@@ -1,9 +1,5 @@
 # Esta é a biblioteca usada para fazer a interface
-import os
-
-
 import PySimpleGUI as sg
-logo = ".\Imagens\Logo2"
 
 # Aqui são definidos os parâmetros do tema da interface, nesse caso foram utilizadas as cores da EJ
 
@@ -30,8 +26,7 @@ sg.theme('MyCreatedTheme')
 
 # Layout do menu principal
 MenuPrincipalLayout = [
-    [sg.Image(f"{logo}.jpg", size=(
-        200, 140), key=1)],
+    [sg.Image("Logotratada.png", key=1)],
     [sg.Text('Menu Principal', font=FontSubtitle)],
     [sg.Button('Preencher Novo Contrato', font=font)],
     [sg.Button('Preferências',  font=font)],
