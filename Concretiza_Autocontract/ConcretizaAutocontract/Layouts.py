@@ -1,7 +1,10 @@
 # Esta é a biblioteca usada para fazer a interface
+import os
 
 
 import PySimpleGUI as sg
+logo = ".\Imagens\Logo2"
+
 # Aqui são definidos os parâmetros do tema da interface, nesse caso foram utilizadas as cores da EJ
 
 sg.LOOK_AND_FEEL_TABLE['MyCreatedTheme'] = {'BACKGROUND': '#87ceeb',
@@ -27,7 +30,7 @@ sg.theme('MyCreatedTheme')
 
 # Layout do menu principal
 MenuPrincipalLayout = [
-    [sg.Image('C:\AUTOTECH\Desenvolvimento\ConcretizaAutocontract\Concretiza_Autocontract\Logo.png', size=(
+    [sg.Image(f"{logo}.jpg", size=(
         200, 140), key=1)],
     [sg.Text('Menu Principal', font=FontSubtitle)],
     [sg.Button('Preencher Novo Contrato', font=font)],
@@ -60,9 +63,9 @@ FormularioLayout1 = [
      sg.Text('Indique o Estado Civil do Cliente: '), sg.InputText()],
     [sg.Text('Indique o telefone de contato do Cliente: '), sg.InputText()],
     [sg.Text("CPF Testemunha 1"), sg.InputText(),
-    sg.Text("CPF Testemunha 2"), sg.InputText()],
+     sg.Text("CPF Testemunha 2"), sg.InputText()],
     [sg.Text("CPF Testemunha 3"), sg.InputText(),
-    sg.Text("CPF Testemunha 4"), sg.InputText()],
+     sg.Text("CPF Testemunha 4"), sg.InputText()],
     [sg.Text("Testemunha 1"), sg.InputText()],
     [sg.Text("Testemunha 2"), sg.InputText()],
     [sg.Button('Continuar'), sg.Button('Sair')]

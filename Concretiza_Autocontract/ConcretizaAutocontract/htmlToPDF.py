@@ -2,8 +2,9 @@ import os
 import sys
 
 from PyQt5 import QtWidgets, QtWebEngineWidgets, QtCore
-arquivo = ".\Contrato"      #nome do arquivo .html de entrada sem o final
-nomeF = ".\ContratoFinal"   #nome doarquivo .pdf de saida sem o final
+arquivo = "Contrato"      #nome do arquivo .html de entrada sem o final
+nomeF = "ContratoFinal"   #nome doarquivo .pdf de saida sem o final
+print(os.getcwdb())
 
 
 def html_to_pdf(html, pdf):      #função principal
