@@ -25,7 +25,7 @@ def Formulario3():
 
 #Essa função capta e armazena os dados da EJ
 def Formulario2():
-    global FormularioWindow2, event5, values5, ValorFinal, DescricaoPagamento, Titular, CNPJPagamento, Banco, Agencia, Conta
+    global FormularioWindow2, event5, values5, ValorFinal, DescricaoPagamento, Titular, CNPJPagamento, Banco, Agencia, Conta 
     FormularioWindow2 = sg.Window("Concretiza AutoContract", lyt.FormularioLayout2)
     event5, values5 = FormularioWindow2.read()
     ValorFinal = values5[0]    #usado
@@ -44,7 +44,7 @@ def Formulario2():
 #Essa função capta e armazena os dados do cliente
 def Formulario():
     #Declara as variáveis de forma global para serem usadas em outras funções e locais
-    global FormularioWindow, event4, values4, NomeCliente, Testemunha1 ,Testemunha2, TelefoneRepresentante, EstadoCivilRepresentante, CargoRepresentante, NomeEmpresa, CNPJCliente, OrgaoExpedidor, RGRepresentante, EnderecoCliente,CPFRepresentante, CEPcliente, CidadeEstadoCliente, NomeRepresentante, EMAILCliente, CPFTestemunha , CPFTestemunha1, CPFTestemunha2, CPFTestemunha3
+    global FormularioWindow, event4, values4, NomeCliente, Testemunha1 ,Testemunha2, TelefoneRepresentante, EstadoCivilRepresentante, CargoRepresentante, NomeEmpresa, CNPJCliente, OrgaoExpedidor, RGRepresentante, EnderecoCliente,CPFRepresentante, CEPcliente, CidadeEstadoCliente, NomeRepresentante, EMAILCliente, CPFTestemunha , CPFTestemunha1, CPFTestemunha2, CPFTestemunha3, Testemunha3 , Testemunha4
     #A função Window cria a janela com o layout especificado
     FormularioWindow = sg.Window("Concretiza AutoContract", lyt.FormularioLayout1)
     #event armazena as informações passadas pelos botões em strings
@@ -70,6 +70,8 @@ def Formulario():
     CPFTestemunha3 = values4[16] #usado
     Testemunha1 = values4[17] #usado
     Testemunha2 = values4[18] #usado
+    Testemunha3 = values4[19] #usado
+    Testemunha4 = values4[20] #usado
 
     if event4 == 'Continuar':
         FormularioWindow.close()

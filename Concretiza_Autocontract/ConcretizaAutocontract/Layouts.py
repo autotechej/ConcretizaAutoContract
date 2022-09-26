@@ -43,9 +43,9 @@ MenuContratosLayout = [
 
 # Layout do Formulário
 FormularioLayout1 = [
-    [sg.Text('Informações do Cliente', font=font3)],
-    [sg.Text('Indique o Nome da Empresa Cliente:'), sg.InputText(),
-     sg.Text('Indique o CNPJ do Cliente:'), sg.InputText(), ],
+    [sg.Text('Informações do Cliente', font=font3)], 
+    [sg.Text('Indique o Nome da Empresa Cliente:'), sg.InputText(), #0  
+     sg.Text('Indique o CNPJ do Cliente:'), sg.InputText(), ], #1
     [sg.Text('Indique o Endereço do Cliente:'), sg.InputText(),
      sg.Text('Indique o EMAIL do Cliente:'), sg.InputText()],
     [sg.Text('Indique o CEP do Cliente:'), sg.InputText(), sg.Text(
@@ -61,8 +61,10 @@ FormularioLayout1 = [
      sg.Text("CPF Testemunha 2"), sg.InputText()],
     [sg.Text("CPF Testemunha 3"), sg.InputText(),
      sg.Text("CPF Testemunha 4"), sg.InputText()],
-    [sg.Text("Testemunha 1"), sg.InputText()],
-    [sg.Text("Testemunha 2"), sg.InputText()],
+    [sg.Text("Testemunha 1"), sg.InputText(),
+    sg.Text("Testemunha 2"), sg.InputText()],
+    [sg.Text("Testemunha 3"), sg.InputText(),
+    sg.Text("Testemunha 4"), sg.InputText()],
     [sg.Button('Continuar'), sg.Button('Sair')]
 ]
 
