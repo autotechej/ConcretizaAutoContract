@@ -30,6 +30,7 @@ MenuPrincipalLayout = [
     [sg.Text('Menu Principal', font=FontSubtitle)],
     [sg.Button('Preencher Novo Contrato', font=font)],
     [sg.Button('Preferências',  font=font)],
+    [sg.Button("Pagamento Teste", font=font)],
     [sg.Button('Sair', font=font)]
 ]
 
@@ -96,4 +97,11 @@ FormularioLayout3 = [
     [sg.Text('Dia de Fechamento do Contrato: '),
      sg.InputText("XX de XXXX de XXXX")],
     [sg.Button('Finalizar'), sg.Button('Sair')]
+]
+
+PagamentoWindow = [
+
+[sg.Button("Á vista sem juros") , sg.Button ("Em 2x com juros de 5%") ,sg.Button ("Em 3x com juros de 10%")],
+
+
 ]

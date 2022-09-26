@@ -5,7 +5,6 @@ import PySimpleGUI as sg
 import Layouts as lyt
 
 
-
 #Essa função capta e armazena os dados de pagamento
 def Formulario3():
     global FormularioWindow3, event6, values6, Prazo1, Prazo2, DescricaoServico, DescricaoPassoAPasso, Vigencia, DataFechamento
@@ -95,7 +94,7 @@ def MenuPreencherContratos():
 
 #A função que executa a janela do Menu Principal, dentro dela são executadas as outras
 def MenuPrincipal():
-    global MenuWindow, event1, values1
+    global MenuWindow, event1, values1, PagamentoWindow
     MenuWindow = sg.Window("Concretiza AutoContract", lyt.MenuPrincipalLayout, size=(400,350), element_justification='c')
     event1, values1 = MenuWindow.read()
     #Caso clique Preencher Novo Contrato ele abre o menu de contratos
@@ -105,3 +104,25 @@ def MenuPrincipal():
     #Caso clique Sair ele encerra o programa
     elif event1 == 'Sair' or event1 == sg.WIN_CLOSED:
         MenuWindow.close()
+    elif event1 == "Pagamento Teste":
+        MenuWindow.close()
+        PagamentoWindow()
+
+def PagamentoWindow():
+    global  event7 , values7, pagar
+    PagamentosWindow = sg.Window("Concretiza AutoContract", lyt.PagamentoWindow)
+    event7, values7 = PagamentosWindow.read()
+    valordopagamento()
+    print(valordopagamento)
+pagar = event7
+
+def valordopagamento():  #esse negocio ta errado, eu vou tentar resolver o mais rapido que der (felipe)
+        global pgto
+        pgto = 0
+        match pagar:
+            case "Á vista sem juros":
+                pgto == f"O pagamento será feito á vista (sem prestações) e dentro de 3 dias úteis, no valor de {ValorFinal}"
+            case "Em 2x com juros de 5%":
+                pgto == f"O Pagamento será feito em duas prestações iguais, sendo a primeira paga antes do inicio do projeto e a segunda em dentro de 1 mês após o inicio do mesmo, no valor de {(ValorFinal x 1.05)/2}"
+    print(pgto)
+
