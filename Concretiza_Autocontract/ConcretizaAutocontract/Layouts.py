@@ -30,7 +30,6 @@ MenuPrincipalLayout = [
     [sg.Text('Menu Principal', font=FontSubtitle)],
     [sg.Button('Preencher Novo Contrato', font=font)],
     [sg.Button('Preferências',  font=font)],
-    [sg.Button("Pagamento Teste", font=font)],
     [sg.Button('Sair', font=font)]
 ]
 
