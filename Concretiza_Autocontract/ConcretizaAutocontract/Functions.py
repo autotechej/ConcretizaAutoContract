@@ -142,3 +142,5 @@ def valordopagamento():
             Pagamento = f"O Pagamento será feito em duas prestações iguais, sendo a primeira paga antes do inicio do serviço e a segunda em dentro de 1 mês após o inicio do mesmo, no valor de R${round((float(ValorFinal)*1.05)/2,2)}"
         case "Em 3x com juros de 10%":
             Pagamento = f"O pagamento será feito em três prestações iguais, sendo a primeira paga antes do inicio do serviço e as seguintes com até um mês passados o pagamento anterior com parcelas de 3x R${round((float(ValorFinal)*1.1)/3,2)}"
+
+            

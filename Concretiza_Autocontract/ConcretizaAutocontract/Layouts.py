@@ -72,8 +72,8 @@ FormularioLayout1 = [
 FormularioLayout2 = [
     [sg.Text('Dados Financeiros', font=font3)],
     [sg.Text('Indique o Valor Final do Serviço: '), sg.InputText()],
-    [sg.Text('Faça uma breve descrição de como será a forma de pagamento:'),
-     sg.InputText('Digite aqui da forma que digitaria no contrato...')],
+    [sg.Text('Diga como será feito o pagamento:'),
+     sg.InputText('Presencial, ...')],
     [sg.Text('Indique o Titular da Conta que o pagamento será efetuado:'),
      sg.InputText()],
     [sg.Text('Indique o CNPJ da Conta do Pagamento: '), sg.InputText()],
@@ -103,6 +103,7 @@ FormularioLayout3 = [
 
 PagamentoWindow = [
 
+[sg.Text('Do Pagamento', font=font3)],
 [sg.Button("Á vista sem juros") , sg.Button ("Em 2x com juros de 5%") ,sg.Button ("Em 3x com juros de 10%")],
 
 
