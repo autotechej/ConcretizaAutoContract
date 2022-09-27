@@ -57,14 +57,15 @@ FormularioLayout1 = [
     [sg.Text('Indique o Cargo do Representante: '), sg.InputText(),
      sg.Text('Indique o Estado Civil do Cliente: '), sg.InputText()],
     [sg.Text('Indique o telefone de contato do Cliente: '), sg.InputText()],
-    [sg.Text("CPF Testemunha 1"), sg.InputText(),
-     sg.Text("CPF Testemunha 2"), sg.InputText()],
-    [sg.Text("CPF Testemunha 3"), sg.InputText(),
-     sg.Text("CPF Testemunha 4"), sg.InputText()],
     [sg.Text("Testemunha 1"), sg.InputText(),
     sg.Text("Testemunha 2"), sg.InputText()],
-    [sg.Text("Testemunha 3"), sg.InputText(),
-    sg.Text("Testemunha 4"), sg.InputText()],
+    [sg.Text("RG Testemunha 1"), sg.InputText(),
+     sg.Text("RG Testemunha 2"), sg.InputText()],
+    [sg.Text("CPF Testemunha 1"), sg.InputText(),
+     sg.Text("CPF Testemunha 2"), sg.InputText()],
+    
+    
+   
     [sg.Button('Continuar'), sg.Button('Sair')]
 ]
 
@@ -90,6 +91,8 @@ FormularioLayout3 = [
      sg.InputText("Escreva por extenso")],
     [sg.Text('Descrição do Serviço: '), sg.InputText(
         'Descreva como deve estar no contrato')],
+    [sg.Text('Descrição do Serviço2: '), sg.InputText(
+        'Descreva como deve estar no contrato')],    
     [sg.Text('Descrição passo-a-passo do Serviço: '),
      sg.InputText("Descrição rápida")],
     [sg.Text('Vigência do Contrato: '), sg.InputText()],

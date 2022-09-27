@@ -1,21 +1,23 @@
 # Este arquivo armazena as funções da interface, caso queira rodar a interface só é necessário a função MenuPrincipal()
 
 # Aqui são importados a biblioteca da interface gráfica e a biblioteca criada por mim que contem os Layouts das janelas
+from optparse import Values
 import PySimpleGUI as sg
 import Layouts as lyt
 
 
 # Essa função capta e armazena os dados de pagamento
 def Formulario3():
-    global FormularioWindow3, event6, values6, Prazo1, Prazo2, DescricaoServico, DescricaoPassoAPasso, Vigencia, DataFechamento
+    global FormularioWindow3, event6, values6, Prazo1, Prazo2, DescricaoServico,DescricaoServico2, DescricaoPassoAPasso, Vigencia, DataFechamento
     FormularioWindow3 = sg.Window("Autotech AutoContract", lyt.FormularioLayout3)
     event6, values6 = FormularioWindow3.read()
     Prazo1 = values6[0]  # usado
     Prazo2 = values6[1]  # usado
     DescricaoServico = values6[2]  # usado
-    DescricaoPassoAPasso = values6[3]  # usado
-    Vigencia = values6[4]  # usado
-    DataFechamento = values6[5]  # usado
+    DescricaoServico2 = values6[3]
+    DescricaoPassoAPasso = values6[4]  # usado
+    Vigencia = values6[5]  # usado
+    DataFechamento = values6[6]  # usado
     if event6 == 'Finalizar':
         FormularioWindow3.close()
     elif event6 == 'Sair' or event6 == sg.WIN_CLOSED:
@@ -47,7 +49,7 @@ def Formulario2():
 
 def Formulario():
     # Declara as variáveis de forma global para serem usadas em outras funções e locais
-    global FormularioWindow, event4, values4, NomeCliente, Testemunha1, Testemunha2, TelefoneRepresentante, EstadoCivilRepresentante, CargoRepresentante, NomeEmpresa, CNPJCliente, OrgaoExpedidor, RGRepresentante, EnderecoCliente, CPFRepresentante, CEPcliente, CidadeEstadoCliente, NomeRepresentante, EMAILCliente, CPFTestemunha, CPFTestemunha1, CPFTestemunha2, CPFTestemunha3, Testemunha3, Testemunha4
+    global FormularioWindow, event4, values4, NomeCliente, Testemunha1, Testemunha2, TelefoneRepresentante, EstadoCivilRepresentante, CargoRepresentante, NomeEmpresa, CNPJCliente, OrgaoExpedidor, RGRepresentante, EnderecoCliente, CPFRepresentante, CEPcliente, CidadeEstadoCliente, NomeRepresentante, EMAILCliente,  CPFTestemunha1, CPFTestemunha2, RGtestemunha1, RGtestemunha2
     # A função Window cria a janela com o layout especificado
     FormularioWindow = sg.Window(
         "Concretiza AutoContract", lyt.FormularioLayout1)
@@ -68,14 +70,14 @@ def Formulario():
     CargoRepresentante = values4[10]  # usado
     EstadoCivilRepresentante = values4[11]  # usado
     TelefoneRepresentante = values4[12]  # usado
-    CPFTestemunha = values4[13]  # usado
-    CPFTestemunha1 = values4[14]  # usado
-    CPFTestemunha2 = values4[15]  # usado
-    CPFTestemunha3 = values4[16]  # usado
-    Testemunha1 = values4[17]  # usado
-    Testemunha2 = values4[18]  # usado
-    Testemunha3 = values4[19]  # usado
-    Testemunha4 = values4[20]  # usado
+    Testemunha1 = values4[13]  # usado
+    Testemunha2 = values4[14]  # usado
+    RGtestemunha1 = values4[15]
+    RGtestemunha2 = values4[16]
+    CPFTestemunha1 = values4[17]  # usado
+    CPFTestemunha2 = values4[18]  # usado
+    
+   
 
     if event4 == 'Continuar':
         FormularioWindow.close()
