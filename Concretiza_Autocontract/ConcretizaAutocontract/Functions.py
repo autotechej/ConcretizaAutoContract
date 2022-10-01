@@ -8,16 +8,20 @@ import Layouts as lyt
 
 # Essa função capta e armazena os dados de pagamento
 def Formulario3():
-    global FormularioWindow3, event6, values6, Prazo1, Prazo2, DescricaoServico,DescricaoServico2, DescricaoPassoAPasso, Vigencia, DataFechamento
+    global FormularioWindow3, event6, values6, Prazo1,Prazo3, Prazo2, DescricaoServico,DescricaoServico2, DescricaoPassoAPasso, Vigencia, DataFechamento,extenso1, extenso2, extenso3
     FormularioWindow3 = sg.Window("Autotech AutoContract", lyt.FormularioLayout3)
     event6, values6 = FormularioWindow3.read()
     Prazo1 = values6[0]  # usado
-    Prazo2 = values6[1]  # usado
-    DescricaoServico = values6[2]  # usado
-    DescricaoServico2 = values6[3]
-    DescricaoPassoAPasso = values6[4]  # usado
-    Vigencia = values6[5]  # usado
-    DataFechamento = values6[6]  # usado
+    extenso1= values6[1]
+    Prazo2 = values6[2]  # usado
+    extenso2 = values6[3]
+    Prazo3 = values6[4]
+    extenso3 = values6[5]
+    DescricaoServico = values6[6]  # usado
+    DescricaoServico2 = values6[7]
+    DescricaoPassoAPasso = values6[8]  # usado
+    Vigencia = values6[9]  # usado
+    DataFechamento = values6[10]  # usado
     if event6 == 'Finalizar':
         FormularioWindow3.close()
     elif event6 == 'Sair' or event6 == sg.WIN_CLOSED:

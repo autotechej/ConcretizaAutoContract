@@ -86,9 +86,17 @@ FormularioLayout2 = [
 FormularioLayout3 = [
     [sg.Text('Dos Serviços e Prazos', font=font3)],
     [sg.Text('Prazo para Execução do Projeto: '),
-     sg.InputText("Escreva por extenso")],
+     sg.InputText("Números"),
+     sg.Text('Escreva por extenso'),
+     sg.InputText("")],
     [sg.Text('Prazo para Contato após finalizar: '),
-     sg.InputText("Escreva por extenso")],
+     sg.InputText("Escreva por extenso"),
+     sg.Text('Escreva por extenso'),
+     sg.InputText("")],
+    [sg.Text('Prazo para em dias para termino do serviço: '),
+     sg.InputText("Escreva por extenso"),
+     sg.Text('Escreva por extenso'),
+     sg.InputText("")],
     [sg.Text('Descrição do Serviço: '), sg.InputText(
         'Descreva como deve estar no contrato')],
     [sg.Text('Descrição do Serviço2: '), sg.InputText(
