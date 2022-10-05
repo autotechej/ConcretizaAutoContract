@@ -38,7 +38,7 @@ def Formulario2():
 
     if event5 == 'Continuar':
         FormularioWindow2.close()
-        PagamentoWindow()
+        passosparte1()
     elif event5 == 'Sair' or event5 == sg.WIN_CLOSED:
         FormularioWindow2.close()
 
@@ -140,3 +140,41 @@ def valordopagamento():
             Pagamento = f"O Pagamento será feito em duas prestações iguais, sendo a primeira paga antes do inicio do serviço e a segunda em dentro de 1 mês após o inicio do mesmo, no valor de R${round((float(ValorFinal)*1.05)/2,2)}"
         case "Em 3x com juros de 10%":
             Pagamento = f"O pagamento será feito em três prestações iguais, sendo a primeira paga antes do inicio do serviço e as seguintes com até um mês passados o pagamento anterior com parcelas de 3x R${round((float(ValorFinal)*1.1)/3,2)}"
+
+           
+def passosparte1():
+    global totaldepassos, values8, event8
+    passos1 = sg.Window("Concretiza AutoContract", lyt.Passo1Window)
+    event8, values8 = passos1.read()
+    totaldepassos = int(values8[0])
+    if event8 == "Continuar":
+        passos1.close()
+        cronogramacompleto()
+    elif event8 == sg.WIN_CLOSED:
+        passos1.close()
+
+def cronogramacompleto():                                           #{felipe} O objetivo era fazer a janela se REPETIR pedindo o passo-a-passo e colocar cada passo numa lista, porém a *palavrao censurado* do PySimpleGui não deixa reusar a mesma janela e eu vou fazer o criador desse programa jogar lol.
+    def passosparte2():
+        CronogramaPassoaPasso = []
+        global values9, event9
+        passos2 = sg.Window(
+            f"Concretiza AutoContract, Passo{numero}", lyt.Passo2Window)
+        event9, values9 = passos2.read()
+
+        if event9 == "Continuar" and numero == totaldepassos:
+            passos2.close()
+            Formulario3()
+        if event9 == "Continuar":
+            cronograma = values9[0]
+            CronogramaPassoaPasso.append(cronograma)
+            passos2.close()
+            passos2()
+        elif event9 == sg.WIN_CLOSED:
+            passos2.close()
+    for numero in range(0, totaldepassos):
+        passosparte2()
+        
+
+
+
+
