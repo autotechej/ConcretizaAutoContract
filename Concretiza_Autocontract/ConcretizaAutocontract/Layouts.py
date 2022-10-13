@@ -1,5 +1,7 @@
 # Esta é a biblioteca usada para fazer a interface
 import PySimpleGUI as sg
+
+
 # Aqui são definidos os parâmetros do tema da interface, nesse caso foram utilizadas as cores da EJ
 
 sg.LOOK_AND_FEEL_TABLE['MyCreatedTheme'] = {'BACKGROUND': '#87ceeb',
@@ -116,18 +118,12 @@ PagamentoWindow = [
 
 ]
 
-Passo1Window = [
-
-[sg.InputText("Quantos passos gostaria de descrever o serviço realizado de forma breve?")],
-[sg.Button("Continuar")]
-
-
-]
-
-Passo2Window = [
-[sg.InputText("Digite aqui da forma como digitaria no contrato sobre como o serviço será feito")],
-[sg.Button("Continuar")]
-
-
-
+cronogramacompleto= [
+    [sg.Text("Digite nos campos abaixo como digitaria no contrato", font=("Arial",10,"bold"))],
+    [sg.Input("Insira o Primeiro passo aqui")],
+    [sg.Input("Insira o Segundo passo aqui")],
+    [sg.Input("Insira o Terceiro passo aqui")],
+    [sg.Input("Insira o Quarto passo aqui")],
+    [sg.Input("Insira o Quinto passo aqui")],
+    [sg.Button("Ok"),sg.Button("Sair")]
 ]
