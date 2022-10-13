@@ -7,15 +7,20 @@ import Layouts as lyt
 
 # Essa função capta e armazena os dados de pagamento
 def Formulario3():
-    global FormularioWindow3, event6, values6, Prazo1, Prazo2, DescricaoServico, DescricaoPassoAPasso, Vigencia, DataFechamento
+    global FormularioWindow3, event6, values6, Prazo1,Prazo3, Prazo2, DescricaoServico,DescricaoServico2, DescricaoPassoAPasso, Vigencia, DataFechamento,extenso1, extenso2, extenso3
     FormularioWindow3 = sg.Window("Autotech AutoContract", lyt.FormularioLayout3)
     event6, values6 = FormularioWindow3.read()
     Prazo1 = values6[0]  # usado
-    Prazo2 = values6[1]  # usado
-    DescricaoServico = values6[2]  # usado
-    DescricaoPassoAPasso = values6[3]  # usado
-    Vigencia = values6[4]  # usado
-    DataFechamento = values6[5]  # usado
+    extenso1= values6[1]
+    Prazo2 = values6[2]  # usado
+    extenso2 = values6[3]
+    Prazo3 = values6[4]
+    extenso3 = values6[5]
+    DescricaoServico = values6[6]  # usado
+    DescricaoServico2 = values6[7]
+    DescricaoPassoAPasso = values6[8]  # usado
+    Vigencia = values6[9]  # usado
+    DataFechamento = values6[10]  # usado
     if event6 == 'Finalizar':
         FormularioWindow3.close()
     elif event6 == 'Sair' or event6 == sg.WIN_CLOSED:
@@ -38,7 +43,7 @@ def Formulario2():
 
     if event5 == 'Continuar':
         FormularioWindow2.close()
-        passosparte1()
+        cronogramascompletos()
     elif event5 == 'Sair' or event5 == sg.WIN_CLOSED:
         FormularioWindow2.close()
 
@@ -47,7 +52,7 @@ def Formulario2():
 
 def Formulario():
     # Declara as variáveis de forma global para serem usadas em outras funções e locais
-    global FormularioWindow, event4, values4, NomeCliente, Testemunha1, Testemunha2, TelefoneRepresentante, EstadoCivilRepresentante, CargoRepresentante, NomeEmpresa, CNPJCliente, OrgaoExpedidor, RGRepresentante, EnderecoCliente, CPFRepresentante, CEPcliente, CidadeEstadoCliente, NomeRepresentante, EMAILCliente, CPFTestemunha, CPFTestemunha1, CPFTestemunha2, CPFTestemunha3, Testemunha3, Testemunha4
+    global FormularioWindow, event4, values4, NomeCliente, Testemunha1, Testemunha2, TelefoneRepresentante, EstadoCivilRepresentante, CargoRepresentante, NomeEmpresa, CNPJCliente, OrgaoExpedidor, RGRepresentante, EnderecoCliente, CPFRepresentante, CEPcliente, CidadeEstadoCliente, NomeRepresentante, EMAILCliente,  CPFTestemunha1, CPFTestemunha2, RGtestemunha1, RGtestemunha2
     # A função Window cria a janela com o layout especificado
     FormularioWindow = sg.Window(
         "Concretiza AutoContract", lyt.FormularioLayout1)
@@ -68,14 +73,14 @@ def Formulario():
     CargoRepresentante = values4[10]  # usado
     EstadoCivilRepresentante = values4[11]  # usado
     TelefoneRepresentante = values4[12]  # usado
-    CPFTestemunha = values4[13]  # usado
-    CPFTestemunha1 = values4[14]  # usado
-    CPFTestemunha2 = values4[15]  # usado
-    CPFTestemunha3 = values4[16]  # usado
-    Testemunha1 = values4[17]  # usado
-    Testemunha2 = values4[18]  # usado
-    Testemunha3 = values4[19]  # usado
-    Testemunha4 = values4[20]  # usado
+    Testemunha1 = values4[13]  # usado
+    Testemunha2 = values4[14]  # usado
+    RGtestemunha1 = values4[15]
+    RGtestemunha2 = values4[16]
+    CPFTestemunha1 = values4[17]  # usado
+    CPFTestemunha2 = values4[18]  # usado
+    
+   
 
     if event4 == 'Continuar':
         FormularioWindow.close()
@@ -141,40 +146,25 @@ def valordopagamento():
         case "Em 3x com juros de 10%":
             Pagamento = f"O pagamento será feito em três prestações iguais, sendo a primeira paga antes do inicio do serviço e as seguintes com até um mês passados o pagamento anterior com parcelas de 3x R${round((float(ValorFinal)*1.1)/3,2)}"
 
+
            
-def passosparte1():
-    global totaldepassos, values8, event8
-    passos1 = sg.Window("Concretiza AutoContract", lyt.Passo1Window)
-    event8, values8 = passos1.read()
-    totaldepassos = int(values8[0])
-    if event8 == "Continuar":
-        passos1.close()
-        cronogramacompleto()
-    elif event8 == sg.WIN_CLOSED:
-        passos1.close()
-
-def cronogramacompleto():                                           #{felipe} O objetivo era fazer a janela se REPETIR pedindo o passo-a-passo e colocar cada passo numa lista, porém a *palavrao censurado* do PySimpleGui não deixa reusar a mesma janela e eu vou fazer o criador desse programa jogar lol.
-    def passosparte2():
-        CronogramaPassoaPasso = []
-        global values9, event9
-        passos2 = sg.Window(
-            f"Concretiza AutoContract, Passo{numero}", lyt.Passo2Window)
-        event9, values9 = passos2.read()
-
-        if event9 == "Continuar" and numero == totaldepassos:
-            passos2.close()
-            Formulario3()
-        if event9 == "Continuar":
-            cronograma = values9[0]
-            CronogramaPassoaPasso.append(cronograma)
-            passos2.close()
-            passos2()
-        elif event9 == sg.WIN_CLOSED:
-            passos2.close()
-    for numero in range(0, totaldepassos):
-        passosparte2()
-        
 
 
+def cronogramascompletos(): #vo fazer em 5 passos pq to sem ideia de como repete janela
+    global passo1, passo2, passo3, passo4, passo5, event8, values8
+    CronogramaWindow= sg.Window("Concretiza AutoContract",lyt.cronogramacompleto)
+    event8 , values8 = CronogramaWindow.read()
+    passo1 = values8[0]
+    passo2 = values8[1]
+    passo3 = values8[2]
+    passo4 = values8[3]
+    passo5 = values8[4]
+    if event8 == "Ok":
+        CronogramaWindow.close()
+        Formulario3()
+    if event8 == "Sair" or event8 == sg.WIN_CLOSED:
+        CronogramaWindow.close()
+    
 
+            
 

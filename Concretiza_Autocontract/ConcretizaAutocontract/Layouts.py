@@ -56,22 +56,23 @@ FormularioLayout1 = [
     [sg.Text('Indique o Cargo do Representante: '), sg.InputText(),
      sg.Text('Indique o Estado Civil do Cliente: '), sg.InputText()],
     [sg.Text('Indique o telefone de contato do Cliente: '), sg.InputText()],
-    [sg.Text("CPF Testemunha 1"), sg.InputText(),
-     sg.Text("CPF Testemunha 2"), sg.InputText()],
-    [sg.Text("CPF Testemunha 3"), sg.InputText(),
-     sg.Text("CPF Testemunha 4"), sg.InputText()],
     [sg.Text("Testemunha 1"), sg.InputText(),
     sg.Text("Testemunha 2"), sg.InputText()],
-    [sg.Text("Testemunha 3"), sg.InputText(),
-    sg.Text("Testemunha 4"), sg.InputText()],
+    [sg.Text("RG Testemunha 1"), sg.InputText(),
+     sg.Text("RG Testemunha 2"), sg.InputText()],
+    [sg.Text("CPF Testemunha 1"), sg.InputText(),
+     sg.Text("CPF Testemunha 2"), sg.InputText()],
+    
+    
+   
     [sg.Button('Continuar'), sg.Button('Sair')]
 ]
 
 FormularioLayout2 = [
     [sg.Text('Dados Financeiros', font=font3)],
     [sg.Text('Indique o Valor Final do Serviço: '), sg.InputText()],
-    [sg.Text('Faça uma breve descrição de como será a forma de pagamento:'),
-     sg.InputText('Digite aqui da forma que digitaria no contrato...')],
+    [sg.Text('Diga como será feito o pagamento:'),
+     sg.InputText('Presencial, ...')],
     [sg.Text('Indique o Titular da Conta que o pagamento será efetuado:'),
      sg.InputText()],
     [sg.Text('Indique o CNPJ da Conta do Pagamento: '), sg.InputText()],
@@ -84,11 +85,21 @@ FormularioLayout2 = [
 FormularioLayout3 = [
     [sg.Text('Dos Serviços e Prazos', font=font3)],
     [sg.Text('Prazo para Execução do Projeto: '),
-     sg.InputText("Escreva por extenso")],
+     sg.InputText("Números"),
+     sg.Text('Escreva por extenso'),
+     sg.InputText("")],
     [sg.Text('Prazo para Contato após finalizar: '),
-     sg.InputText("Escreva por extenso")],
+     sg.InputText("Escreva por extenso"),
+     sg.Text('Escreva por extenso'),
+     sg.InputText("")],
+    [sg.Text('Prazo para em dias para termino do serviço: '),
+     sg.InputText("Escreva por extenso"),
+     sg.Text('Escreva por extenso'),
+     sg.InputText("")],
     [sg.Text('Descrição do Serviço: '), sg.InputText(
         'Descreva como deve estar no contrato')],
+    [sg.Text('Descrição do Serviço2: '), sg.InputText(
+        'Descreva como deve estar no contrato')],    
     [sg.Text('Descrição passo-a-passo do Serviço: '),
      sg.InputText("Descrição rápida")],
     [sg.Text('Vigência do Contrato: '), sg.InputText()],
@@ -99,6 +110,7 @@ FormularioLayout3 = [
 
 PagamentoWindow = [
 
+[sg.Text('Do Pagamento', font=font3)],
 [sg.Button("Á vista sem juros") , sg.Button ("Em 2x com juros de 5%") ,sg.Button ("Em 3x com juros de 10%")],
 
 
